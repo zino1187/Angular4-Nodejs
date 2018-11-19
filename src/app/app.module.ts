@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//이거 반드시 해야 한다
+import { HttpClientModule,HttpClient } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +11,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule //이것도 반드시 해야 한다
   ],
   providers: [],
   bootstrap: [AppComponent]
