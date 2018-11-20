@@ -1,18 +1,35 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="wrapper">
   <div class="input_area">
-    <input type="text" #name/>
-    <input type="text" #age/>
-    <input type="text" #job/>
+    <input type="text" #input_name />
+    <input type="text" #input_age />
+    <input type="text" #input_job />
 
-    <button (click)="regist(name.value ,age.value ,job.value)">등록</button>
+    <button (click)="regist(input_name.value ,input_age.value ,input_job.value)">등록</button>
   </div>
-  <div class="list_area">리스트</div>
+  <div class="list_area">
+    <table border="1px" width="90%" align="center">
+      <tr>
+        <td>이름</td>
+        <td>나이</td>
+        <td>직업</td>
+     </tr>
+      
+      <tr *ngFor="let profile of profiles" (click)="getDetail(profile.profile_id)">
+        <td>{{profile.name}}</td>
+        <td>{{profile.age}}</td>
+        <td>{{profile.job}}</td>
+      </tr>
+
+    </table>
+  </div>
   <div class="detail_area">
-    <input type="text">
-    <input type="text">
-    <input type="text">
-    <button>수정</button>
-    <button>삭제</button>
+      <input type="hidden" value="{{p}}"/>
+      <input type="text" value="{{n}}"/>
+      <input type="text" value="{{a}}" />
+      <input type="text" value="{{j}}" />
+
+      <button>삭제</button>
+      <button (click)="edit(p,n, a, j)">수정</button>
   </div>
 </div>
