@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Profile } from './profile.model';
-import { Subscriber } from 'rxjs/Subscriber';
 
 
 @Component({
